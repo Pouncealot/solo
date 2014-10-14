@@ -10,7 +10,6 @@ angular.module('tracker', [  'ui.router',
     .state('home', {
       url: '/',
       controller: 'RegionsController',
-      // template: '<h1>CHILD</h1>'
       templateUrl: 'client/app/regions/regions.html',
       // resolve: {
       //   regions: function(Regions) {
