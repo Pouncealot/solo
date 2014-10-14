@@ -1,4 +1,4 @@
-<div id='container'>
+ <div id='container'>
 
   <nav class="navigation">
     <ul>
@@ -9,10 +9,10 @@
     </ul>
   </nav>
 </div>
-<input type='text' ng-model='search' placeholder='filter' />
+<input type='text' ng-model='search' placeholder='' />
 <div class="regions">
-    <region-Info region="region" ng-repeat="region in data.regions | filter:search | orderBy:'name'">
+    <region-info region="reg" ng-repeat="reg in data.statuses | filter:search | orderBy: 'name'">
 
-    </region-Info>
+    </region-info>
 
 </div>

@@ -2,8 +2,10 @@
 <div class="region">
   <div class="info">
     <div class="online">
-      <span class="status">{{region}}</span>Status 
+      <span class="status">{{region.name}}: </span>
+      <img class="light" ng-src="{{region.services[1].status == 'online' && '/client/assets/green_light.png' || '/client/assets/red_light.png'}}"/>
+
     </div>
-    <div class="title">{{ region.hostname }}</div>
+    <div class="title"></div>
   </div>
 </div>

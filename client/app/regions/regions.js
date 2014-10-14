@@ -1,10 +1,7 @@
 angular.module('tracker.regions', [])
 
 .controller('RegionsController', function ($scope, regions, $log) {
-  // Your code here
-  /* START SOLUTION */
-
-  $scope.data = {regions: 
+  $scope.data = {regions:
   [
    {
       "region_tag": "na1",
@@ -82,25 +79,24 @@ angular.module('tracker.regions', [])
       "hostname": "prod.oc1.lol.riotgames.com",
       "slug": "oce"
    }
-]
-  };
-  // $scope.getLinks = function () {
-  //   Links.getAll()
-  //     .then(function (links) {
-  //       $scope.data.links = links;
-  //     })
-  //     .catch(function (error) {
-  //       console.error(error);
-  //     });
-  // };
-  // $scope.getLinks();
-  /* END SOLUTION */
+  ],
+  statuses : []
+  }
+
+  $scope.data.regions.forEach(function(reg){
+    regions.getRegion(reg.slug)
+      .then(function(resp){
+          $scope.data.statuses.push(resp);
+          console.log($scope.data);
+        })
+  })
 })
+
 .directive('regionInfo', function() {
   return {
     restrict: 'E',
     scope: {
-      link: '='
+      region : '='
     },
     transclusion: true,
     replace: true,
@@ -108,5 +104,5 @@ angular.module('tracker.regions', [])
     link: function(scope, ele, attrs) {
 
     }
-  };
-});
+  }
+})

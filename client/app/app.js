@@ -12,7 +12,7 @@ angular.module('tracker', [  'ui.router',
       controller: 'RegionsController',
       templateUrl: 'client/app/regions/regions.html',
       // resolve: {
-      //   regions: function(Regions) {
+      //   regions: function() {
       //     console.log(Regions.getAll());
       //     return Regions.getAll();
       //   }
