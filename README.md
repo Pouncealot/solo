@@ -1,2 +1,1 @@
-#solo
-This is a project I completed as a student at [Hack Reactor](http://hackreactor.com). This project was worked on with a pair.
+A quick project for a site that tracks the status of league of legends servers. Done in angular.js
