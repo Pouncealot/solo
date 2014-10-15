@@ -5,11 +5,13 @@
       <li>
           <a class="selected" href="#/regions">Regions</a>
       </li>
-
+      <li>
+          <a href="#/players">Players</a>
+      </li>
     </ul>
   </nav>
 </div>
-<input type='text' ng-model='search' placeholder='' />
+<!-- <input type='text' ng-model='search' placeholder='' /> -->
 <div class="regions">
     <region-info region="reg" ng-repeat="reg in data.statuses | filter:search | orderBy: 'name'">
 

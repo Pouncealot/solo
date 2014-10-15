@@ -4,18 +4,27 @@ angular.module('tracker.regions', [])
   $scope.data =   { statuses : []
   }
 
-  regions.getAll()
-    .then(function(resp){
-      $scope.data.regions = resp;
-    })
-   .then(function(){
-    $scope.data.regions.forEach(function(reg){
-    regions.getRegion(reg.slug)
+  var refresh = function(){
+      $scope.data.statuses = [];
+      regions.getAll()
       .then(function(resp){
-          $scope.data.statuses.push(resp);
-        })
+        $scope.data.regions = resp;
+      })
+     .then(function(){
+      $scope.data.regions.forEach(function(reg){
+      regions.getRegion(reg.slug)
+        .then(function(resp){
+            $scope.data.statuses.push(resp);
+          })
+      })
     })
-  })
+    console.log('refreshing')
+    window.setTimeout(refresh,25000)
+  }
+
+  refresh();
+
+
 })
 
 .directive('regionInfo', function() {
